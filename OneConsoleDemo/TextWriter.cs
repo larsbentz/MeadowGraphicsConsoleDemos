@@ -35,14 +35,21 @@ namespace OneConsoleDemo
             var rnd = new Random(DateTime.Now.Millisecond);
             Running = true;
 
-            while (Running)
+            int cnt = 0;
+            int oldcol = 0;
+            while (cnt < 16)
             {
                 var rndcol = rnd.Next(0, colors.Length - 1);
+                if (rndcol == oldcol) continue;
+                oldcol = rndcol;
 
-                GW.DrawText(X, Y, Text, colors[rndcol]);
-                var rndms = rnd.Next(1, 1000);
-                Thread.Sleep(500 + rndms);
+                GW.DrawText(X, Y, Text, colors[rndcol], Meadow.Foundation.Graphics.ScaleFactor.X2);
+                Thread.Sleep(200);
+                //var rndms = rnd.Next(1, 1000);
+                //Thread.Sleep(500 + rndms);
+                cnt++;
             }
+            GW.DrawText(X, Y, Text, Color.Red, Meadow.Foundation.Graphics.ScaleFactor.X2);
         }
 
         public void Stop()

@@ -5,7 +5,7 @@ namespace MeadowCommonLib.Data
 {
     public class DemoData
     {
-        public static readonly Demo[] Demos = new Demo[]
+        public static readonly Demo[] DemosOld = new Demo[]
         {
             new Demo
             {
@@ -23,7 +23,7 @@ namespace MeadowCommonLib.Data
             {
                 Text = "OS version",
                 Color= Color.Blue,
-                Scale = ScaleFactor.X2
+                Scale = ScaleFactor.X1
             },
             new Demo
             {
@@ -69,17 +69,145 @@ namespace MeadowCommonLib.Data
             },
             new Demo
             {
-                Text = "RUN",
+                Text = "START",
                 Color = Color.Green,
                 Scale = ScaleFactor.X3
             },
             new Demo
             {
-                Text = "STOP!",
+                Text = "STOP",
                 Color = Color.Red,
                 Scale = ScaleFactor.X3
             }
         };
+
+        public static readonly Demo[] Demos = new Demo[]
+        {
+            new Demo
+            {
+                 Text = "Memory OK",
+                 Color = Color.Blue,
+                 Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CPU temp",
+                Color= Color.Red,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "OS",
+                Color= Color.Blue,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "Message received",
+                Color= Color.Green,
+                Scale = ScaleFactor.X1
+            },
+            new Demo
+            {
+                Text = "Waiting for command",
+                Color= Color.GreenYellow,
+                Scale = ScaleFactor.X1
+            },
+            new Demo
+            {
+                Text = "MSG OK",
+                Color= Color.GreenYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CHECK OK",
+                Color= Color.LightYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "TEST DONE",
+                Color= Color.LightSkyBlue,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CMD X1",
+                Color= Color.GreenYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CMD X2",
+                Color= Color.YellowGreen,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CMD Y3",
+                Color= Color.LightPink,
+                Scale = ScaleFactor.X2
+            },
+
+            new Demo
+            {
+                Text = "Data tranfer ok",
+                Color = Color.Orchid
+            },
+            new Demo
+            {
+                Text = "CMD received",
+                Color = Color.LightCoral
+            },
+            new Demo
+            {
+                Text = "Instruction halt, fatal error",
+                Color = Color.Red,
+                Scale = ScaleFactor.X1
+            },
+            new Demo
+            {
+                Text = "All systems run",
+                Color = Color.LawnGreen
+            },
+            new Demo
+            {
+                Text = "All systems up",
+                Color = Color.GreenYellow
+            },
+            new Demo
+            {
+                Text = "All systems OK",
+                Color = Color.LightGreen,
+                Scale = ScaleFactor.X1
+            },
+            new Demo
+            {
+                Text = "Meadow rules :-)",
+                Color = Color.CornflowerBlue,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "This text is quite long, just so we can see it wrap some lines...",
+                Color = Color.Yellow
+            },
+            new Demo
+            {
+                Text = "START",
+                Color = Color.Green,
+                Scale = ScaleFactor.X3
+            },
+            new Demo
+            {
+                Text = "STOP",
+                Color = Color.Red,
+                Scale = ScaleFactor.X3
+            }
+        };
+
+
 
         public static readonly string[] Strings = new string[] {
             "Commander here"

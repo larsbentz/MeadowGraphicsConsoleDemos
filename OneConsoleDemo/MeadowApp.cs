@@ -11,6 +11,7 @@ using MeadowCommonLib.Devices;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OneConsoleDemo
 {
@@ -61,8 +62,7 @@ namespace OneConsoleDemo
         public override async Task Run()
         {
             Resolver.Log.Info("Run...");
-
-            //await ShowColorPulse(Color.Green, TimeSpan.FromMilliseconds(3000));
+            
             await onboardLed.StartPulse(Color.Green, TimeSpan.FromMilliseconds(3000));
 
             await DemoMonitor();
@@ -77,31 +77,67 @@ namespace OneConsoleDemo
 
             InitializeTextWriter();
 
-            var rnd = new Random(DateTime.Now.Millisecond);
+            // Start writing to Console            
+            gc.WriteLine("Initializing", Color.Red, ScaleFactor.X2, true);
+            await Task.Delay(3000);
 
+            gc.WriteLine("System starting...", Color.OrangeRed, ScaleFactor.X2, true);
+            await Task.Delay(3000);
+
+            gc.WriteLine("Warming up...", Color.Orange, ScaleFactor.X2, true);
+            await Task.Delay(3000);
+
+            gc.WriteLine("Comm ready", Color.Yellow, ScaleFactor.X2, true);
+            await Task.Delay(3000);
+
+            gc.WriteLine("GO", Color.Green, ScaleFactor.X3, true);
+            await Task.Delay(2000);
+
+            gc.WriteLine("Meadow rules :-)", Color.CornflowerBlue, ScaleFactor.X2, true);
+            await Task.Delay(4000);
+
+            var rnd = new Random(DateTime.Now.Millisecond);
+            var oldnum = 0;
             while (true)
             {
                 var txtnum = rnd.Next(0, DemoData.Demos.Length - 1);
-                var txt = ((DemoData.Demos[txtnum].Scale == ScaleFactor.X1) ? DateTime.Now.ToString("mm:ss ") : "")
-                            + DemoData.Demos[txtnum].Text;
-                if (txt.StartsWith("CPU t"))
+                if (txtnum == oldnum) continue;
+                oldnum = txtnum;
+
+                //var sf = (rndnum % 2 == 0) ? ScaleFactor.X1 : ScaleFactor.X2;
+                //var sf = ScaleFactor.X1; // demos[txtnum].Scale; // sf;
+                var txt = DemoData.Demos[txtnum].Text;
+                var color = DemoData.Demos[txtnum].Color; // colors[colnum];
+                var scale = DemoData.Demos[txtnum].Scale;
+                if (scale == ScaleFactor.X3)
+                    scale = ScaleFactor.X2;
+                //gc.WriteLine(txt, color, scale, true);
+
+                //var txtnum = rnd.Next(0, DemoData.Demos.Length - 1);
+                //var txt = ((DemoData.Demos[txtnum].Scale == ScaleFactor.X1) ? DateTime.Now.ToString("mm:ss ") : "")
+                //            + DemoData.Demos[txtnum].Text;
+                if (txt.Contains("CPU temp"))
                 {
                     var cpuTemp = Device.PlatformOS.GetCpuTemperature();
                     txt += $" {cpuTemp.Celsius:0.##}";
                 }
-                else if (txt.StartsWith("OS v"))
+                else if (txt == "OS")
                 {
                     var osVersion = Device.PlatformOS.OSVersion;
                     txt += $" {osVersion}";
                 }
-                var color = DemoData.Demos[txtnum].Color; // colors[colnum];
-                var scaleFactor = DemoData.Demos[txtnum].Scale;
-                gc.WriteLine(txt, color, scaleFactor, true);
+                //var color = DemoData.Demos[txtnum].Color; // colors[colnum];
+                //var scaleFactor = DemoData.Demos[txtnum].Scale;
+                gc.WriteLine(txt, color, scale, true);
 
                 //gc.WriteLine(DateTime.Now.ToString("mm:ss ") + response.StatusCode, true);
 
                 //Thread.Sleep(3000);
-                await Task.Delay(3000);
+                var rndsleep = rnd.Next(0, 10);
+                if (rndsleep < 5) 
+                    await Task.Delay(2000);
+                else
+                    await Task.Delay(3000);
             }
         }
 
@@ -110,13 +146,8 @@ namespace OneConsoleDemo
         {
             graphics.Clear(true);
 
-            //graphics.WriteLine("Hello!", 1);
-            //graphics.DrawText(indent, y, "Meadow F7 SPI ST7789!!");
-            graphics.DrawText(10, 5, "Console", Color.Red, ScaleFactor.X2);
-
             gc = new GraphicsConsole(graphics, false);
-            gc.YTop = graphics.Height / 4;
-            //gc.YBottom = graphics.Height - gc.YTop;
+            gc.YTop = graphics.Height / 4;            
             gc.Indent = 0;
             gc.IndentRight = 0;
             gc.BorderColor = Color.Violet;
@@ -136,10 +167,12 @@ namespace OneConsoleDemo
 
         TextWriter InitializeTextWriter()
         {
+            graphics.DrawText(110, 0, "Console", Color.Red, ScaleFactor.X2);
             GraphicsWriter gWriter = new GraphicsWriter(graphics);
-            TextWriter txtWriter = new TextWriter(gWriter, 130, 0, "Meadow");
-            Thread tWriter = new Thread(txtWriter.Start);
-            tWriter.Start();
+            TextWriter txtWriter = new TextWriter(gWriter, 5, 0, "Meadow");
+            txtWriter.Start();
+            //Thread tWriter = new Thread(txtWriter.Start);
+            //tWriter.Start();
             return txtWriter;
         }
 
