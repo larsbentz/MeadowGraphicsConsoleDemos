@@ -1,5 +1,5 @@
-﻿Welcome to the Graphics Console Demos for Meadow
-================================================
+﻿Graphics Console Demos for Meadow
+=================================
 
 This Visual Studio solution contains three examples of how to use the Belasoft Graphics Console on a [**meadow**](https://www.wildernesslabs.co/developers) board from [*Wilderness Labs*](https://www.wildernesslabs.co/). The **meadow** board must have a graphic display attached for this to work.
 
