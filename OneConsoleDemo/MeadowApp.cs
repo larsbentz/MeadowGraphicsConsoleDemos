@@ -149,7 +149,8 @@ namespace OneConsoleDemo
             gc.Indent = 0;
             gc.IndentRight = 0;
             gc.BorderColor = Color.Violet;
-            gc.SetBorder();
+            gc.SetBorder();            
+            //gc.WriteLineSleep = 500;   // Default is 500 ms.   
             Thread t = new Thread(gc.Start);
             t.Start();
         }
