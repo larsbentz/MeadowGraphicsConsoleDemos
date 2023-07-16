@@ -193,12 +193,12 @@ namespace MeadowCommonLib.Data
                 Text = "This text is quite long, just so we can see it wrap some lines...",
                 Color = Color.Yellow
             },
-            new Demo
-            {
-                Text = "START",
-                Color = Color.Green,
-                Scale = ScaleFactor.X3
-            },
+            //new Demo
+            //{
+            //    Text = "START",
+            //    Color = Color.Green,
+            //    Scale = ScaleFactor.X3
+            //},
             new Demo
             {
                 Text = "STOP",
@@ -207,6 +207,111 @@ namespace MeadowCommonLib.Data
             }
         };
 
+        public static readonly Demo[] Cons1 = new Demo[]
+{
+            new Demo
+            {
+                 Text = "GO RIGHT",
+                 Color = Color.Salmon,
+                 Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                 Text = "GO LEFT",
+                 Color = Color.Salmon,
+                 Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                 Text = "GO UP",
+                 Color = Color.Salmon,
+                 Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                 Text = "GO DOWN",
+                 Color = Color.Salmon,
+                 Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "MSG OK",
+                Color= Color.GreenYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CHECK OK",
+                Color= Color.LightYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "SENSOR 1 ON",
+                Color= Color.LightSkyBlue,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "ZX 81",
+                Color= Color.GreenYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "VIC 20",
+                Color= Color.YellowGreen,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "SLEEP 20",
+                Color= Color.LightPink,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "SYSTEMS CHECK",
+                Color = Color.LawnGreen,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "CPU OK",
+                Color = Color.GreenYellow,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "MEMORY OK",
+                Color = Color.OrangeRed,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "MEADOW",
+                Color = Color.CornflowerBlue,
+                Scale = ScaleFactor.X3
+            },
+            new Demo
+            {
+                Text = "Meadow rules :-)",
+                Color = Color.CornflowerBlue,
+                Scale = ScaleFactor.X2
+            },
+            new Demo
+            {
+                Text = "Meadow rules :-)",
+                Color = Color.LightSteelBlue,
+                Scale = ScaleFactor.X1
+            },
+            new Demo
+            {
+                Text = "STOP",
+                Color = Color.Red,
+                Scale = ScaleFactor.X2
+            }
+};
 
 
         public static readonly string[] Strings = new string[] {

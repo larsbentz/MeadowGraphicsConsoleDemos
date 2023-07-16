@@ -37,10 +37,10 @@ namespace OneConsoleDemo
 
             int cnt = 0;
             int oldcol = 0;
-            while (cnt < 16)
+            while (cnt < 15)
             {
                 var rndcol = rnd.Next(0, colors.Length - 1);
-                if (rndcol == oldcol) continue;
+                if (rndcol == oldcol || colors[rndcol] == Color.Red) continue;
                 oldcol = rndcol;
 
                 GW.DrawText(X, Y, Text, colors[rndcol], Meadow.Foundation.Graphics.ScaleFactor.X2);

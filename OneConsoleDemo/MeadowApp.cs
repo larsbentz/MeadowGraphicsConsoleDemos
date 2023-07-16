@@ -104,14 +104,11 @@ namespace OneConsoleDemo
                 if (txtnum == oldnum) continue;
                 oldnum = txtnum;
 
-                //var sf = (rndnum % 2 == 0) ? ScaleFactor.X1 : ScaleFactor.X2;
-                //var sf = ScaleFactor.X1; // demos[txtnum].Scale; // sf;
                 var txt = DemoData.Demos[txtnum].Text;
                 var color = DemoData.Demos[txtnum].Color; // colors[colnum];
                 var scale = DemoData.Demos[txtnum].Scale;
                 if (scale == ScaleFactor.X3)
-                    scale = ScaleFactor.X2;
-                //gc.WriteLine(txt, color, scale, true);
+                    scale = ScaleFactor.X2;                
 
                 //var txtnum = rnd.Next(0, DemoData.Demos.Length - 1);
                 //var txt = ((DemoData.Demos[txtnum].Scale == ScaleFactor.X1) ? DateTime.Now.ToString("mm:ss ") : "")
@@ -134,7 +131,9 @@ namespace OneConsoleDemo
 
                 //Thread.Sleep(3000);
                 var rndsleep = rnd.Next(0, 10);
-                if (rndsleep < 5) 
+                if (rndsleep < 3)
+                    await Task.Delay(1000);
+                else if (rndsleep < 6) 
                     await Task.Delay(2000);
                 else
                     await Task.Delay(3000);
