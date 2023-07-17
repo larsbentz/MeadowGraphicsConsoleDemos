@@ -150,7 +150,7 @@ namespace OneConsoleDemo
 
         GraphicsClock InitializeClock()
         {
-            GraphicsClock gClock = new GraphicsClock(graphics, 10, 30);
+            GraphicsClock gClock = new GraphicsClock(graphics, 10, 30);            
             gClock.ScaleFactor = ScaleFactor.X2;
             Thread tClock = new Thread(gClock.Start);
             tClock.Start();
