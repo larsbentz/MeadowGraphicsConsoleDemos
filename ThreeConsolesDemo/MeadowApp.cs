@@ -64,8 +64,7 @@ namespace OneConsoleDemo
 
             await onboardLed.StartPulse(Color.Green, TimeSpan.FromMilliseconds(3000));
 
-            await ThreeConsoles();
-            //return CycleColors(TimeSpan.FromMilliseconds(1000));
+            await ThreeConsoles();            
         }
 
 

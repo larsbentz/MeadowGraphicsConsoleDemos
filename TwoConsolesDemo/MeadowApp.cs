@@ -63,8 +63,7 @@ namespace OneConsoleDemo
 
             await onboardLed.StartPulse(Color.Green, TimeSpan.FromMilliseconds(3000));
 
-            await TwoConsoles();
-            //return CycleColors(TimeSpan.FromMilliseconds(1000));
+            await TwoConsoles();            
         }
 
 
@@ -110,8 +109,6 @@ namespace OneConsoleDemo
                     var txt = DemoData.Cons1[txtnum].Text;
                     var color = DemoData.Cons1[txtnum].Color;
                     var scale = DemoData.Cons1[txtnum].Scale;
-                    //if (scale == ScaleFactor.X3)
-                    //    scale = ScaleFactor.X2;
                     gc.WriteLine(txt, color, scale, true);
 
                 }
