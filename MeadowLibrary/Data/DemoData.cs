@@ -5,82 +5,6 @@ namespace MeadowCommonLib.Data
 {
     public class DemoData
     {
-        public static readonly Demo[] DemosOld = new Demo[]
-        {
-            new Demo
-            {
-                 Text = "Memory OK",
-                 Color = Color.Blue,
-                 Scale = ScaleFactor.X2
-            },
-            new Demo
-            {
-                Text = "CPU temp",
-                Color= Color.Red,
-                Scale = ScaleFactor.X2
-            },
-            new Demo
-            {
-                Text = "OS version",
-                Color= Color.Blue,
-                Scale = ScaleFactor.X1
-            },
-            new Demo
-            {
-                Text = "Memory low",
-                Color= Color.OrangeRed,
-                Scale = ScaleFactor.X2
-            },
-            new Demo
-            {
-                Text = "Data tranfer ok - waiting for command",
-                Color = Color.Orchid
-            },
-            new Demo
-            {
-                Text = "Instruction halt, fatal error",
-                Color = Color.MediumVioletRed
-            },
-            new Demo
-            {
-                Text = "All systems run",
-                Color = Color.LawnGreen
-            },
-            new Demo
-            {
-                Text = "All systems up",
-                Color = Color.GreenYellow
-            },
-            new Demo
-            {
-                Text = "All systems down",
-                Color = Color.OrangeRed
-            },
-            new Demo
-            {
-                Text = "Meadow rules :-)",
-                Color = Color.CornflowerBlue,
-                Scale = ScaleFactor.X2
-            },
-            new Demo
-            {
-                Text = "This text is quite long, just so we can see it wrap some lines...",
-                Color = Color.Yellow
-            },
-            new Demo
-            {
-                Text = "START",
-                Color = Color.Green,
-                Scale = ScaleFactor.X3
-            },
-            new Demo
-            {
-                Text = "STOP",
-                Color = Color.Red,
-                Scale = ScaleFactor.X3
-            }
-        };
-
         public static readonly Demo[] Demos = new Demo[]
         {
             new Demo
@@ -149,7 +73,6 @@ namespace MeadowCommonLib.Data
                 Color= Color.LightPink,
                 Scale = ScaleFactor.X2
             },
-
             new Demo
             {
                 Text = "Data tranfer ok",
@@ -193,12 +116,6 @@ namespace MeadowCommonLib.Data
                 Text = "This text is quite long, just so we can see it wrap some lines...",
                 Color = Color.Yellow
             },
-            //new Demo
-            //{
-            //    Text = "START",
-            //    Color = Color.Green,
-            //    Scale = ScaleFactor.X3
-            //},
             new Demo
             {
                 Text = "STOP",
