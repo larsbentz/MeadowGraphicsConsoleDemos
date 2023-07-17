@@ -11,10 +11,6 @@ The examples uses the St7789 display, but although the console has not been test
 
 You can have the whole display being a console, part of the display being a console, or you can even have more than one console on the same display. 
 
-Sometimes it's nice to have a console that can show messages, events, commands etc. so that you have an idea of what is going on in your program. A console is like having a small window to a log while it's being written. That can be quite usefull in certain situations and for me, I would have a hard time coding on the meadow without having a console. That's why I made it - but of course it depends on the individual needs and what you are developing. 
-
-Anyway, I hope you will find it usefull - Happy coding :-)
-
 Examples of Console in action
 -----------------------------
 
@@ -74,39 +70,3 @@ Installation steps
         gc.WriteLine("Comm ready", Color.Yellow, ScaleFactor.X2, true);
         gc.WriteLine("GO", Color.Green, ScaleFactor.X3, true);        
 
-
-...
-
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like
-
-  * this one
-  * that one
-  * the other one
-
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
-
-An h2 header
-------------
-
-Here's a numbered list:
-
- 1. first item
- 2. second item
- 3. third item
-
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
