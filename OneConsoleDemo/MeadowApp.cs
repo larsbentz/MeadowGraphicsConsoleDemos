@@ -78,22 +78,22 @@ namespace OneConsoleDemo
 
             // Start writing to Console            
             gc.WriteLine("Initializing", Color.Red, ScaleFactor.X2, true);
-            await Task.Delay(3000);
-
-            gc.WriteLine("System starting...", Color.OrangeRed, ScaleFactor.X2, true);
-            await Task.Delay(3000);
-
-            gc.WriteLine("Warming up...", Color.Orange, ScaleFactor.X2, true);
-            await Task.Delay(3000);
-
-            gc.WriteLine("Comm ready", Color.Yellow, ScaleFactor.X2, true);
-            await Task.Delay(3000);
-
-            gc.WriteLine("GO", Color.Green, ScaleFactor.X3, true);
             await Task.Delay(2000);
 
+            gc.WriteLine("System starting...", Color.OrangeRed, ScaleFactor.X2, true);
+            await Task.Delay(2000);
+
+            gc.WriteLine("Warming up...", Color.Orange, ScaleFactor.X2, true);
+            await Task.Delay(2000);
+
+            gc.WriteLine("Comm ready", Color.Yellow, ScaleFactor.X2, true);
+            await Task.Delay(2000);
+
+            gc.WriteLine("GO", Color.Green, ScaleFactor.X3, true);
+            await Task.Delay(1000);
+
             gc.WriteLine("Meadow rules :-)", Color.CornflowerBlue, ScaleFactor.X2, true);
-            await Task.Delay(4000);
+            await Task.Delay(2000);
 
             var rnd = new Random(DateTime.Now.Millisecond);
             var oldnum = 0;
@@ -104,14 +104,11 @@ namespace OneConsoleDemo
                 oldnum = txtnum;
 
                 var txt = DemoData.Demos[txtnum].Text;
-                var color = DemoData.Demos[txtnum].Color; // colors[colnum];
+                var color = DemoData.Demos[txtnum].Color;
                 var scale = DemoData.Demos[txtnum].Scale;
                 if (scale == ScaleFactor.X3)
                     scale = ScaleFactor.X2;                
 
-                //var txtnum = rnd.Next(0, DemoData.Demos.Length - 1);
-                //var txt = ((DemoData.Demos[txtnum].Scale == ScaleFactor.X1) ? DateTime.Now.ToString("mm:ss ") : "")
-                //            + DemoData.Demos[txtnum].Text;
                 if (txt.Contains("CPU temp"))
                 {
                     var cpuTemp = Device.PlatformOS.GetCpuTemperature();
@@ -122,20 +119,16 @@ namespace OneConsoleDemo
                     var osVersion = Device.PlatformOS.OSVersion;
                     txt += $" {osVersion}";
                 }
-                //var color = DemoData.Demos[txtnum].Color; // colors[colnum];
-                //var scaleFactor = DemoData.Demos[txtnum].Scale;
+
                 gc.WriteLine(txt, color, scale, true);
 
-                //gc.WriteLine(DateTime.Now.ToString("mm:ss ") + response.StatusCode, true);
-
-                //Thread.Sleep(3000);
                 var rndsleep = rnd.Next(0, 10);
                 if (rndsleep < 3)
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
                 else if (rndsleep < 6) 
-                    await Task.Delay(2000);
+                    await Task.Delay(1000);
                 else
-                    await Task.Delay(3000);
+                    await Task.Delay(2000);
             }
         }
 
@@ -170,41 +163,9 @@ namespace OneConsoleDemo
             GraphicsWriter gWriter = new GraphicsWriter(graphics);
             TextWriter txtWriter = new TextWriter(gWriter, 5, 0, "Meadow");
             txtWriter.Start();
-            //Thread tWriter = new Thread(txtWriter.Start);
-            //tWriter.Start();
             return txtWriter;
         }
 
 
-
-
-
-
-        async Task CycleColors(TimeSpan duration)
-        {
-            Resolver.Log.Info("Cycle colors...");
-
-            while (true)
-            {
-                await ShowColorPulse(Color.Blue, duration);
-                await ShowColorPulse(Color.Cyan, duration);
-                await ShowColorPulse(Color.Green, duration);
-                await ShowColorPulse(Color.GreenYellow, duration);
-                await ShowColorPulse(Color.Yellow, duration);
-                await ShowColorPulse(Color.Orange, duration);
-                await ShowColorPulse(Color.OrangeRed, duration);
-                await ShowColorPulse(Color.Red, duration);
-                await ShowColorPulse(Color.MediumVioletRed, duration);
-                await ShowColorPulse(Color.Purple, duration);
-                await ShowColorPulse(Color.Magenta, duration);
-                await ShowColorPulse(Color.Pink, duration);
-            }
-        }
-
-        async Task ShowColorPulse(Color color, TimeSpan duration)
-        {
-            await onboardLed.StartPulse(color, duration / 2);
-            await Task.Delay(duration);
-        }
     }
 }

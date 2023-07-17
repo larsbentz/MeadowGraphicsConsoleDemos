@@ -7,7 +7,7 @@ The examples uses the St7789 display, but although the console has not been test
 
 ... hertil
  
-![example image](Samples/image1.jpg "An example image")
+![example image](Media/image1.jpg "An example image")
 
 You can have the whole display being a console, part of the display being a console, or you can even have more than one console on the same display. 
 
