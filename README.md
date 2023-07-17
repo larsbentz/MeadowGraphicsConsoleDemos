@@ -33,11 +33,17 @@ Getting Started
 
 5. Select your Meadow Device in Visual Studio (View --> Toolbars --> Meadow Device List)
 
-6. Right-click the project you want to run and select Deploy. Choose between the projects:
+6. From Visual Studio, right-click the project you want to run and select Deploy. Choose between the projects:
 
-  * 'OneConsoleDemo'
-  * 'TwoConsolesDemo'
-  * 'ThreeConsolesDemo'
+   * 'OneConsoleDemo'
+   * 'TwoConsolesDemo'
+   * 'ThreeConsolesDemo'
+
+Contact
+-------
+
+You are welcome to contact me [Lars B.](https://wildernesslabspublic.slack.com/team/U013YL3SNR4) on Slack if you have any questions, problems or comments to this.
+
 
 License
 -------
