@@ -38,3 +38,8 @@ Getting Started
   * 'OneConsoleDemo'
   * 'TwoConsolesDemo'
   * 'ThreeConsolesDemo'
+
+License
+-------
+
+Released under the [Apache 2 license](license.md).
