@@ -6,9 +6,11 @@
     <AssemblyName>App</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Belasoft.Meadow.GraphicsConsole" Version="1.0.3" />
-    <PackageReference Include="Meadow.F7" Version="*" />
-    <PackageReference Include="Meadow.Foundation" Version="*" />
+    <PackageReference Include="Belasoft.Meadow.GraphicsConsole" Version="1.0.4" />
+    <PackageReference Include="Meadow.F7" Version="2.4.0" />
+    <PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="2.4.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.8" />
+    <!--<PackageReference Include="Meadow.Foundation" Version="*" />-->
   </ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\MeadowLibrary\MeadowCommonLib.csproj" />

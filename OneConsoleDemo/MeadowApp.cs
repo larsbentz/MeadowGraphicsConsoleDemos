@@ -1,16 +1,18 @@
-﻿using Belasoft.MeadowLibrary;
-using Meadow;
+﻿using Meadow;
 using Meadow.Devices;
 using Meadow.Foundation;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Leds;
 using Meadow.Hardware;
+using MPDisplays =  Meadow.Peripherals.Displays;
 using Meadow.Peripherals.Leds;
 using MeadowCommonLib.Data;
 using MeadowCommonLib.Devices;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Meadow.Peripherals.Displays;
+using Belasoft.MeadowLibrary;
 
 namespace OneConsoleDemo
 {
@@ -21,7 +23,7 @@ namespace OneConsoleDemo
         IPin chipSelectPin;
         IPin dcPin;
         IPin resetPin;
-        RotationType rotationType;
+		MPDisplays.RotationType rotationType;
 
         MicroGraphics graphics;
         GraphicsConsole gc;
@@ -31,7 +33,7 @@ namespace OneConsoleDemo
         {
             Resolver.Log.Info("Initialize...");
 
-            onboardLed = new RgbPwmLed(
+			onboardLed = new RgbPwmLed(
                 redPwmPin: Device.Pins.OnboardLedRed,
                 greenPwmPin: Device.Pins.OnboardLedGreen,
                 bluePwmPin: Device.Pins.OnboardLedBlue,
@@ -52,7 +54,7 @@ namespace OneConsoleDemo
             //resetPin = Device.Pins.D00;
             //rotationType = RotationType._270Degrees;
 
-            var st7789Graphices = new St7789Graphics(MeadowApp.Device.CreateSpiBus(), chipSelectPin, dcPin, resetPin, new Font8x12(), ColorMode.Format16bppRgb565, rotationType);
+            var st7789Graphices = new St7789Graphics(Device.CreateSpiBus(), chipSelectPin, dcPin, resetPin, new Font8x12(), ColorMode.Format16bppRgb565, rotationType);
             graphics = st7789Graphices.Graphics;
 
             return base.Initialize();

@@ -1,6 +1,7 @@
 ﻿using Meadow.Foundation.Displays;
 using Meadow.Foundation.Graphics;
 using Meadow.Hardware;
+using Meadow.Peripherals.Displays;
 
 namespace MeadowCommonLib.Devices
 {

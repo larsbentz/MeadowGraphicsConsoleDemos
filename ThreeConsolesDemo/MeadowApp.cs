@@ -5,6 +5,7 @@ using Meadow.Foundation;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Leds;
 using Meadow.Hardware;
+using Meadow.Peripherals.Displays;
 using Meadow.Peripherals.Leds;
 using MeadowCommonLib.Data;
 using MeadowCommonLib.Devices;

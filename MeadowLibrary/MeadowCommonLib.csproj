@@ -5,14 +5,10 @@
     <AssemblyName>MeadowCommonLib</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-	  <PackageReference Include="Belasoft.Meadow.GraphicsConsole" Version="1.0.3" />
-	  <PackageReference Include="Meadow.F7" Version="1.1.0" />
-	  <PackageReference Include="Meadow.Foundation" Version="1.1.0" />
-      <PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="1.1.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Belasoft.MeadowLibrary">
-      <HintPath>..\Belasoft.MeadowLibrary\Belasoft.MeadowLibrary.dll</HintPath>
-    </Reference>
+	  <PackageReference Include="Belasoft.Meadow.GraphicsConsole" Version="1.0.4" />
+	  <PackageReference Include="Meadow.F7" Version="2.4.0" />
+	  <!--<PackageReference Include="Meadow.Foundation" Version="1.1.0" />-->
+      <PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="2.4.0" />
+      <PackageReference Include="System.Text.Json" Version="9.0.8" />
   </ItemGroup>
 </Project>
