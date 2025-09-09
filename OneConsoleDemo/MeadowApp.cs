@@ -1,18 +1,17 @@
-﻿using Meadow;
+﻿using Belasoft.MeadowLibrary;
+using Meadow;
 using Meadow.Devices;
-using Meadow.Foundation;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Leds;
 using Meadow.Hardware;
-using MPDisplays =  Meadow.Peripherals.Displays;
+using Meadow.Peripherals.Displays;
 using Meadow.Peripherals.Leds;
 using MeadowCommonLib.Data;
 using MeadowCommonLib.Devices;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Meadow.Peripherals.Displays;
-using Belasoft.MeadowLibrary;
+using MPDisplays = Meadow.Peripherals.Displays;
 
 namespace OneConsoleDemo
 {
@@ -23,7 +22,7 @@ namespace OneConsoleDemo
         IPin chipSelectPin;
         IPin dcPin;
         IPin resetPin;
-		MPDisplays.RotationType rotationType;
+		RotationType rotationType;
 
         MicroGraphics graphics;
         GraphicsConsole gc;
